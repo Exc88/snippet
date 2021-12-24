@@ -4,9 +4,22 @@
  
 {{define "main"}}
 <h2>Последние заметки</h2>
-<p>Пока здесь ничего нет!</p>
-<h1>Пример шаблона</h1>
-    {{block "sidebar" .}}
-        <p>Моя боковая панель!</p>
+{{if .Snippets}}
+<table>
+<tr>
+<th>Заголовок</th>
+<th>Создан</th>
+<th>ID</th>
+</tr>
+{{range .Snippets}}
+<tr>
+            <td><a href='/snippet?id={{.ID}}'>{{.Title}}</a></td>
+            <td>{{.Created}}</td>
+            <td>#{{.ID}}</td>
+        </tr>
+        {{end}}
+        </table>
+        {{else}}
+<p>Пока здесь ничего нет... пока что!</p>
     {{end}}
 {{end}}
