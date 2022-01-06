@@ -1,2 +1,2 @@
 # snippet
-snippet box about add notes
+snippet box about notes
